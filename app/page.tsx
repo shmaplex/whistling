@@ -1,12 +1,28 @@
+"use client";
 import Image from "next/image";
-import Link from "next/link";
+import { useRef } from "react";
 import { ProductSplitSection } from "@/components/product-split-panel";
 import { Logo } from "@/components/shmaplex-logo";
 import { Button } from "@/components/ui/button";
 
 export default function WhistlingLanding() {
+  const containerRef = useRef(null);
+
+  const scrollToScents = () => {
+    const el = document.getElementById("scents");
+    if (!el || !containerRef.current) return;
+
+    el.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <main className="relative h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-background text-foreground">
+    <main
+      ref={containerRef}
+      className="relative h-screen overflow-y-scroll snap-y snap-mandatory bg-background text-foreground"
+    >
       {/* =====================================================
           Hero
          ===================================================== */}
@@ -24,23 +40,16 @@ export default function WhistlingLanding() {
             />
           </div>
 
-          {/* <p className="mt-2 text-base sm:text-lg italic text-foreground/80">
-            daene &amp; rob
-          </p> */}
-
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg">
-              <Link href="#scents">Explore Scents</Link>
+            <Button size="lg" onClick={scrollToScents}>
+              Explore Scents
             </Button>
-            {/* <Button size="lg" variant="outline">
-              Our Story
-            </Button> */}
           </div>
         </div>
       </section>
 
       {/* =====================================================
-          Scents — Mobile-First Fullscreen
+          Scents
          ===================================================== */}
       <ProductSplitSection
         id="scents"
