@@ -39,7 +39,7 @@ export default function WhistlingLanding() {
       </section>
 
       {/* ================= Scents (Mobile) ================= */}
-      <section id="scents-love" className="h-screen snap-start md:hidden">
+      <section id="scents" className="h-screen snap-start md:hidden">
         <ProductSplitSection.Single
           title="Love"
           image="/products/love-incense-b.jpg"
