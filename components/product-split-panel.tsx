@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type ProductSplit = {
+export type ProductSplit = {
   title: string;
   image: string;
   href?: string;
@@ -14,11 +14,15 @@ type ProductSplit = {
 };
 
 interface ProductSplitSectionProps {
-  id: string;
+  id?: string;
   left: ProductSplit;
   right: ProductSplit;
   className?: string;
 }
+
+/* =========================
+   Desktop split section
+   ========================= */
 
 export function ProductSplitSection({
   left,
@@ -41,6 +45,25 @@ export function ProductSplitSection({
     </section>
   );
 }
+
+/* =========================
+   Mobile single section
+   ========================= */
+
+function ProductSplitSingle(props: ProductSplit) {
+  return (
+    <div className="relative h-full w-full">
+      <SplitPanel {...props} />
+    </div>
+  );
+}
+
+/* attach as static property */
+ProductSplitSection.Single = ProductSplitSingle;
+
+/* =========================
+   Shared panel renderer
+   ========================= */
 
 function SplitPanel({
   title,
@@ -74,15 +97,12 @@ function SplitPanel({
           <Link
             href={href}
             className={cn(
-              // ===== Base button (default look) =====
               "mt-4 w-fit inline-flex items-center justify-center",
               "h-12 px-8 border-2 rounded-none",
               "font-black text-base uppercase",
               "transition-colors duration-150",
               "bg-primary text-primary-foreground border-primary",
               "hover:bg-accent hover:border-accent",
-
-              // ===== Custom overrides =====
               buttonClassName,
             )}
           >
