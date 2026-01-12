@@ -1,108 +1,74 @@
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { ProductSplitSection } from "@/components/product-split-panel";
+import { Logo } from "@/components/shmaplex-logo";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function WhistlingLanding() {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-background text-foreground">
       {/* =====================================================
-          Hero with Fullscreen Image + Logo Overlay
+          Hero
          ===================================================== */}
-      <section className="relative min-h-screen w-full">
-        {/* Image placeholder */}
-        <div className="absolute inset-0 bg-muted">
-          {/* Replace src later with Sora image */}
-          {/* <Image
-            // src="/hero/placeholder-e.webp"
-            src="/hero/placeholder-d@2x.jpg"
-            alt="Whistling incense atmosphere"
-            fill
-            priority
-            className="object-cover"
-          /> */}
+      <section className="relative h-screen w-full snap-start">
+        <div className="absolute inset-0 bg-muted" />
 
-          {/* Atmospheric overlay */}
-          {/* <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/20 to-background" /> */}
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center text-center px-6 bg-[#FFB4CC]">
-          {/* Logo placeholder */}
-          <div className="relative h-24 w-full md:h-36 md:w-full">
-            {/* <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl" /> */}
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+          <div className="relative h-20 w-full sm:h-24 md:h-36">
             <Image
               src="/whistling-logo-red.svg"
               alt="Whistling logo"
               fill
               priority
-              className="relative object-contain"
+              className="object-contain"
             />
           </div>
 
-          {/* <Badge variant="secondary" className="mb-6">
-            One of a kind
-          </Badge> */}
-
-          {/* <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white">
-            Objects for living, keeping,
-            <br />
-            and passing the time well.
-          </h1> */}
-
-          <p className="mt-2 max-w-xl text-lg md:text-xl text-white/85 font-serif italic">
+          {/* <p className="mt-2 text-base sm:text-lg italic text-foreground/80">
             daene &amp; rob
-          </p>
+          </p> */}
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="rounded-2xl bg-[#D7001C]">
-              Explore Scents
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button size="lg">
+              <Link href="#scents">Explore Scents</Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-2xl border-border bg-background/60 backdrop-blur"
-            >
+            {/* <Button size="lg" variant="outline">
               Our Story
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>
 
       {/* =====================================================
-          Scents
+          Scents — Mobile-First Fullscreen
          ===================================================== */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-          <Card className="rounded-3xl">
-            <CardHeader>
-              <CardTitle className="text-3xl">Love</CardTitle>
-            </CardHeader>
-            <CardContent className="text-muted-foreground">
-              Soft smoke, floral warmth, and resinous sweetness. Designed for
-              closeness, memory, and slow evenings.
-            </CardContent>
-          </Card>
-
-          <Card className="rounded-3xl">
-            <CardHeader>
-              <CardTitle className="text-3xl">Forest</CardTitle>
-            </CardHeader>
-            <CardContent className="text-muted-foreground">
-              Grounded woods, green depth, and mineral air. A walk under canopy,
-              distilled into smoke.
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      <ProductSplitSection
+        id="scents"
+        left={{
+          title: "Love",
+          image: "/products/love-incense-b.jpg",
+          href: "/scents/love",
+          buttonClassName:
+            "bg-[#fd3f30] border-[#fd3f30] text-white hover:bg-[#ff5a4a]",
+        }}
+        right={{
+          title: "Forest",
+          image: "/products/forest-incense-a.jpg",
+          href: "/scents/forest",
+          buttonClassName:
+            "bg-[#d5c7ae] border-[#d5c7ae] text-[#35321e] hover:bg-[#a9a135] hover:border-[#a9a135]",
+        }}
+      />
 
       {/* =====================================================
           Craft
          ===================================================== */}
-      <section className="py-24 px-6 bg-secondary">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-4xl font-semibold">Made by Hand</h2>
-          <p className="text-muted-foreground">
+      <section className="relative h-screen w-full snap-start bg-secondary flex items-center justify-center px-6 bg-cover bg-[url('/handmade-b.jpg')]">
+        <div className="mx-auto max-w-xl md:max-w-4xl space-y-4 text-center text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold">
+            Made by Hand
+          </h2>
+          <p className="text-base sm:text-lg max-w-[38ch]">
             Each stick is mixed, rolled, and dried by hand. No shortcuts. No
             synthetics. Just time, care, and fire.
           </p>
@@ -110,13 +76,14 @@ export default function WhistlingLanding() {
       </section>
 
       {/* =====================================================
-          Bridge to Shmaplex
+          Bridge
          ===================================================== */}
-      <section className="py-16 px-6 text-center">
-        <p className="text-sm text-muted-foreground">
-          Whistling is a ritual extension of{" "}
-          <span className="font-medium text-foreground">Shmaplex</span>.
-        </p>
+      <section className="relative min-h-[50vh] bg-black w-full snap-start flex items-center justify-center px-6 text-center">
+        <div className="flex gap-1 justify-start items-center text-background">
+          <p className="text-sm">Whistling is a ritual extension of</p>
+          <Logo className="text-inherit" />
+          <span>.</span>
+        </div>
       </section>
     </main>
   );

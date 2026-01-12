@@ -10,8 +10,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -52,116 +52,116 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  /* Brutalist radii (not too soft) */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
 }
 
 /* =========================================================
-   Light Theme — Whistling
+   Light Theme — Whistling (Brutalist Pop)
    ========================================================= */
 :root {
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 
   /* Base */
-  --background: oklch(0.985 0.01 350);
-  --foreground: oklch(0.16 0.03 20);
+  --background: #FFB4CC; /* primary canvas */
+  --foreground: oklch(0.15 0.02 20); /* near-black ink */
 
   /* Surface */
-  --card: oklch(0.99 0.015 350);
-  --card-foreground: oklch(0.16 0.03 20);
+  --card: oklch(0.99 0.01 350);
+  --card-foreground: oklch(0.15 0.02 20);
 
-  --popover: oklch(0.99 0.015 350);
-  --popover-foreground: oklch(0.16 0.03 20);
+  --popover: oklch(0.99 0.01 350);
+  --popover-foreground: oklch(0.15 0.02 20);
 
   /* Brand */
-  --primary: #DF001D; /* deep crimson */
+  --primary: #D7001C; /* main accent */
   --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.86 0.07 345); /* blush pink */
-  --secondary-foreground: oklch(0.24 0.04 20);
+  --secondary: oklch(0.92 0.04 350); /* softened pink */
+  --secondary-foreground: oklch(0.18 0.03 20);
 
-  --accent: oklch(0.66 0.22 25); /* ember */
+  /* Accent = louder red variant for hovers / highlights */
+  --accent: oklch(0.58 0.24 25);
   --accent-foreground: oklch(0.99 0 0);
 
   /* Muted */
-  --muted: oklch(0.93 0.03 345);
-  --muted-foreground: oklch(0.46 0.03 20);
+  --muted: oklch(0.9 0.03 350);
+  --muted-foreground: oklch(0.45 0.02 20);
 
-  /* Utility */
-  --border: oklch(0.88 0.03 345);
-  --input: oklch(0.88 0.03 345);
-  --ring: oklch(0.66 0.22 25);
+  /* Utility (intentionally visible) */
+  --border: oklch(0.18 0.02 20);
+  --input: oklch(0.95 0.02 350);
+  --ring: #D7001C;
 
-  --destructive: oklch(0.58 0.25 25);
+  --destructive: oklch(0.55 0.25 25);
 
-  /* Charts (warm, incense-friendly) */
-  --chart-1: oklch(0.66 0.22 25);
-  --chart-2: oklch(0.72 0.18 350);
-  --chart-3: oklch(0.58 0.14 20);
-  --chart-4: oklch(0.78 0.12 40);
-  --chart-5: oklch(0.62 0.2 10);
+  /* Charts (poster-friendly) */
+  --chart-1: #D7001C;
+  --chart-2: oklch(0.75 0.12 350);
+  --chart-3: oklch(0.35 0.02 20);
+  --chart-4: oklch(0.65 0.18 40);
+  --chart-5: oklch(0.5 0.22 10);
 
   /* Sidebar */
-  --sidebar: oklch(0.98 0.015 350);
-  --sidebar-foreground: oklch(0.16 0.03 20);
-  --sidebar-primary: oklch(0.52 0.22 20);
+  --sidebar: oklch(0.98 0.01 350);
+  --sidebar-foreground: oklch(0.15 0.02 20);
+  --sidebar-primary: #D7001C;
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.86 0.07 345);
-  --sidebar-accent-foreground: oklch(0.24 0.04 20);
-  --sidebar-border: oklch(0.88 0.03 345);
-  --sidebar-ring: oklch(0.66 0.22 25);
+  --sidebar-accent: #FFB4CC;
+  --sidebar-accent-foreground: oklch(0.18 0.03 20);
+  --sidebar-border: oklch(0.18 0.02 20);
+  --sidebar-ring: #D7001C;
 }
 
 /* =========================================================
-   Dark Theme — Whistling
+   Dark Theme — Whistling (Ink + Neon)
    ========================================================= */
 .dark {
-  --background: oklch(0.14 0.02 20);
+  --background: oklch(0.12 0.02 20);
   --foreground: oklch(0.98 0.01 350);
 
-  --card: oklch(0.18 0.03 20);
+  --card: oklch(0.16 0.02 20);
   --card-foreground: oklch(0.98 0.01 350);
 
-  --popover: oklch(0.18 0.03 20);
+  --popover: oklch(0.16 0.02 20);
   --popover-foreground: oklch(0.98 0.01 350);
 
-  --primary: oklch(0.72 0.22 25);
-  --primary-foreground: oklch(0.14 0.02 20);
+  --primary: #D7001C;
+  --primary-foreground: oklch(0.98 0.01 350);
 
-  --secondary: oklch(0.32 0.08 345);
+  --secondary: oklch(0.32 0.06 350);
   --secondary-foreground: oklch(0.98 0.01 350);
 
-  --accent: oklch(0.74 0.25 35);
-  --accent-foreground: oklch(0.14 0.02 20);
+  --accent: #FFB4CC;
+  --accent-foreground: oklch(0.12 0.02 20);
 
-  --muted: oklch(0.28 0.04 20);
-  --muted-foreground: oklch(0.68 0.03 350);
+  --muted: oklch(0.25 0.02 20);
+  --muted-foreground: oklch(0.7 0.02 350);
 
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.74 0.25 35);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: #FFB4CC;
 
-  --destructive: oklch(0.68 0.26 25);
+  --destructive: oklch(0.65 0.26 25);
 
-  --chart-1: oklch(0.72 0.22 25);
-  --chart-2: oklch(0.66 0.18 345);
-  --chart-3: oklch(0.78 0.14 40);
+  --chart-1: #D7001C;
+  --chart-2: #FFB4CC;
+  --chart-3: oklch(0.8 0.02 350);
   --chart-4: oklch(0.6 0.2 10);
-  --chart-5: oklch(0.7 0.24 30);
+  --chart-5: oklch(0.7 0.22 30);
 
-  --sidebar: oklch(0.18 0.03 20);
+  --sidebar: oklch(0.14 0.02 20);
   --sidebar-foreground: oklch(0.98 0.01 350);
-  --sidebar-primary: oklch(0.72 0.22 25);
-  --sidebar-primary-foreground: oklch(0.14 0.02 20);
-  --sidebar-accent: oklch(0.32 0.08 345);
+  --sidebar-primary: #D7001C;
+  --sidebar-primary-foreground: oklch(0.98 0.01 350);
+  --sidebar-accent: oklch(0.3 0.06 350);
   --sidebar-accent-foreground: oklch(0.98 0.01 350);
-  --sidebar-border: oklch(1 0 0 / 12%);
-  --sidebar-ring: oklch(0.74 0.25 35);
+  --sidebar-border: oklch(1 0 0 / 14%);
+  --sidebar-ring: #FFB4CC;
 }
 
 /* =========================================================
@@ -169,7 +169,7 @@
    ========================================================= */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/60;
   }
 
   body {
